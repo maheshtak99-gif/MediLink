@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+:root {
+  font-size: 17.5px;
+  --primary: #0F172A;
+  --primary-light: #1E293B;
+  --accent: #E2B842;
+  --accent-glow: rgba(226, 184, 66, 0.4);
+  --secondary: #0EA5E9;
+  --emerald: #10B981;
+  --background: #FCFDFE;
+  --foreground: #0F172A;
+  --font-sans: 'Inter', sans-serif;
+  --font-heading: 'Inter', sans-serif;
+}
+
+@theme inline {
+  --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
+  --color-accent: var(--accent);
+  --color-secondary: var(--secondary);
+  --color-emerald: var(--emerald);
+  --color-brand-teal: #00D084;
+  --color-brand-teal-dark: #05b372;
+  --font-sans: var(--font-sans);
+  --font-heading: var(--font-heading);
+}
+
+html, body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.dark-glass-panel {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* EKG Heartbeat Logo Animation */
+.ekg-wrapper {
+  width: 100%;
+  max-width: 120px;
+  height: 16px;
+  position: relative;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.ekg-line-gold {
+  width: 200%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 40'%3E%3Cpolyline points='0,20 20,20 25,10 30,30 35,20 100,20' fill='none' stroke='%23E2B842' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-size: 60px 16px;
+  animation: ekg-flow 2s linear infinite;
+  filter: drop-shadow(0px 0px 4px var(--accent-glow));
+}
+
+@keyframes ekg-flow {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-60px);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Page transitions / micro-animations */
+.fade-in-up {
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Original Logo Branding & Animations */
+/* Logo CSS removed and converted to inline Tailwind in Navbar.tsx */
+
+@keyframes logoShine {
+  0% { background-position: -100% center; }
+  100% { background-position: 100% center; }
+}
+
+@keyframes logoWave {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+/* RCM Diagram Styles */
+.rcm-diagram-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: 2rem;
+  margin-bottom: 4rem;
+}
+
+.rcm-diagram {
+  min-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.rcm-groups {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #334155;
+  border-bottom: 2px solid #d1e2f3;
+  padding-bottom: 0.5rem;
+}
+.rg-1 { grid-column: span 1; }
+.rg-2 { grid-column: span 2; position: relative; }
+.rg-3 { grid-column: span 2; position: relative; }
+.rg-4 { grid-column: span 1; position: relative; }
+.rg-5 { grid-column: span 1; }
+
+.rcm-columns {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+}
+
+.rcm-col {
+  background: #0F2C59;
+  color: #FFFFFF;
+  border-radius: 8px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+
+.rcm-col-blue {
+  background: #1F4788;
+}
+
+.rcm-col-header {
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.rcm-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.rcm-list li {
+  margin-bottom: 0.75rem;
+}
+
+.rcm-bottom-bar {
+  background: #0A1E3F;
+  color: white;
+  text-align: center;
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.rcm-bottom-boxes {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.rcm-bottom-box {
+  background: #0F2C59;
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* Sleek Scrollbar for RCM Diagram on mobile */
+.rcm-diagram-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+.rcm-diagram-wrapper::-webkit-scrollbar-track {
+  background: rgba(15, 44, 89, 0.05);
+  border-radius: 3px;
+}
+.rcm-diagram-wrapper::-webkit-scrollbar-thumb {
+  background: #00D084;
+  border-radius: 3px;
+}
+
+/* Hero Background Video & Overlay */
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  transform: translateX(-50%) translateY(-50%);
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(10, 30, 63, 0.7) 0%, rgba(15, 44, 89, 0.8) 100%);
+  z-index: 1;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 60s linear infinite;
+  display: flex;
+  width: max-content;
+}
+
+.animate-marquee-reverse {
+  animation: marquee 60s linear infinite reverse;
+  display: flex;
+  width: max-content;
+}
+
+.animate-marquee:hover,
+.animate-marquee-reverse:hover {
+  animation-play-state: paused;
+}
