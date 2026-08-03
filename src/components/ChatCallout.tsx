@@ -21,8 +21,8 @@ export default function ChatCallout() {
   }, []);
 
   const openHubSpotChat = () => {
-    if (window.HubSpotConversations && window.HubSpotConversations.widget) {
-      window.HubSpotConversations.widget.open();
+    if ((window as any).HubSpotConversations && (window as any).HubSpotConversations.widget) {
+      (window as any).HubSpotConversations.widget.open();
       setIsVisible(false); // Permanently hide callout after interacting
     }
   };
