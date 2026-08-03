@@ -17,7 +17,7 @@ const slides = [
   },
   {
     id: 2,
-    image: "/hero_2.jpg",
+    image: "/hero_2_real.jpg",
     objectPosition: "object-center",
     badge: "Advanced Analytics",
     headlineLine1: "Stop Revenue Leakage.",
@@ -102,8 +102,8 @@ export default function HeroCarousel() {
               >
                 <div className="flex flex-col gap-6">
                   <div>
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-sky-500/20 text-sky-400 border border-sky-500/30 uppercase tracking-widest backdrop-blur-sm shadow-[0_0_15px_rgba(14,165,233,0.3)]">
-                      <ShieldCheck className="h-4 w-4 text-sky-400" /> {slide.badge}
+                    <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold bg-[#00d38a] text-slate-950 uppercase tracking-widest shadow-[0_4px_15px_rgba(0,211,138,0.5)]">
+                      <ShieldCheck className="h-4 w-4" /> {slide.badge}
                     </span>
                   </div>
                   <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.1] text-white">
@@ -114,22 +114,22 @@ export default function HeroCarousel() {
                   </h1>
                   
                   {/* Flex container to ensure text and bullets stack cleanly in document flow */}
-                  <div className="flex flex-col gap-4 relative">
-                    <p className="text-sky-100/90 text-sm sm:text-base lg:text-lg max-w-xl leading-relaxed drop-shadow-md font-medium">
+                  <div className="flex flex-col gap-5 relative bg-slate-950/20 p-4 -ml-4 rounded-2xl backdrop-blur-[2px]">
+                    <p className="text-white text-base sm:text-lg lg:text-xl max-w-xl leading-relaxed font-bold drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
                       {slide.description}
                     </p>
 
-                    <ul className="flex flex-col gap-3 text-xs sm:text-sm text-sky-200/90 font-medium tracking-wide">
-                      <li className="flex items-center gap-2.5">
-                        <CheckCircle2 className="h-5 w-5 text-amber-500 shrink-0" />
+                    <ul className="flex flex-col gap-3 text-sm sm:text-base text-white font-bold tracking-wide drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                      <li className="flex items-center gap-3">
+                        <CheckCircle2 className="h-5 w-5 text-[#00d38a] shrink-0 drop-shadow-md" />
                         <span>Industry-leading clean claim submission practices</span>
                       </li>
-                      <li className="flex items-center gap-2.5">
-                        <CheckCircle2 className="h-5 w-5 text-amber-500 shrink-0" />
+                      <li className="flex items-center gap-3">
+                        <CheckCircle2 className="h-5 w-5 text-[#00d38a] shrink-0 drop-shadow-md" />
                         <span>Streamlined payer credentialing and enrollment</span>
                       </li>
-                      <li className="flex items-center gap-2.5">
-                        <CheckCircle2 className="h-5 w-5 text-amber-500 shrink-0" />
+                      <li className="flex items-center gap-3">
+                        <CheckCircle2 className="h-5 w-5 text-[#00d38a] shrink-0 drop-shadow-md" />
                         <span>Performance-based model: We only get paid when you collect</span>
                       </li>
                     </ul>

@@ -9,8 +9,8 @@
   --accent-glow: rgba(226, 184, 66, 0.4);
   --secondary: #0EA5E9;
   --emerald: #10B981;
-  --background: #FCFDFE;
-  --foreground: #0F172A;
+  --background: #020617;
+  --foreground: #F8FAFC;
   --font-sans: 'Inter', sans-serif;
   --font-heading: 'Inter', sans-serif;
 }
@@ -31,15 +31,24 @@ html, body {
   background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
-  overflow-x: hidden;
+  overflow-x: clip;
   scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* High-Definition Rendering Settings */
 * {
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img, video, canvas, svg {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 p {
@@ -290,4 +299,29 @@ p {
 .animate-marquee:hover,
 .animate-marquee-reverse:hover {
   animation-play-state: paused;
+}
+
+/* Cinematic Page Reveal */
+@keyframes pageRevealCinematic {
+  0% { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-page-reveal {
+  animation: pageRevealCinematic 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation-delay: 3.5s;
+}
+
+/* Print optimization for Save as PDF */
+@media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
 }

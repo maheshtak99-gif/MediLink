@@ -15,11 +15,7 @@ export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
 
-  const getHubspotCookie = () => {
-    if (typeof document === "undefined") return "";
-    const match = document.cookie.match(/hubspotutk=([^;]+)/);
-    return match ? match[1] : "";
-  };
+
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -27,20 +23,21 @@ export default function ContactPage() {
     setError("");
 
     try {
-      const hutk = getHubspotCookie();
-      const response = await fetch("/api/contact", {
+      const response = await fetch("https://formsubmit.co/ajax/info@medilinkrcm.com", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "Accept": "application/json"
         },
         body: JSON.stringify({
           name,
           email,
           phone,
           clinic,
-          claimsVol,
-          message,
-          hutk,
+          "Claims Volume": claimsVol,
+          "Audit Details": message,
+          _subject: `New RCM Audit Request from ${name} (${clinic})`,
+          _replyto: email
         }),
       });
 
