@@ -7,8 +7,52 @@ import Script from "next/script";
 import SplashScreen from "@/components/SplashScreen";
 
 export const metadata: Metadata = {
-  title: "MediLink | Premium Revenue Cycle Management & Provider Credentialing",
-  description: "MediLink provides enterprise RCM, medical billing, coding, and payer credentialing for healthcare practices. Optimize claims, reduce denials to under 3%, and boost revenue.",
+  title: "MediLink RCM | Premier Medical Billing & Revenue Cycle Management",
+  description: "MediLink RCM provides enterprise Revenue Cycle Management (RCM), medical billing, coding, and payer credentialing for healthcare practices. Optimize claims, reduce denials to under 3%, and boost your revenue today.",
+  keywords: [
+    "MediLink RCM",
+    "MediLink Revenue Cycle Management",
+    "Medical Billing Company",
+    "Healthcare RCM",
+    "Payer Credentialing",
+    "Medical Coding Services",
+    "Denial Management",
+    "A/R Recovery"
+  ],
+  authors: [{ name: "MediLink RCM" }],
+  creator: "MediLink RCM",
+  publisher: "MediLink RCM",
+  metadataBase: new URL('https://www.medilinkrcm.com'),
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://www.medilinkrcm.com',
+    siteName: 'MediLink RCM',
+    title: 'MediLink RCM | Premier Medical Billing & Revenue Cycle Management',
+    description: 'Stop revenue leakage. Leverage MediLink RCM for 95%+ clean claims, certified medical coding, and aggressive A/R recovery.',
+    images: [
+      {
+        url: '/MediLink_LinkedIn_HD.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'MediLink RCM',
+      }
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 export const viewport = {
