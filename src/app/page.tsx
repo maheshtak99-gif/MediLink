@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import ComprehensiveServices from "@/components/ComprehensiveServices";
 import { ShieldCheck, Award, ArrowUpRight, CheckCircle2, ChevronRight, Briefcase, FileCheck, ArrowRight, Star } from "lucide-react";
 import SoftwareMarquee from "@/components/SoftwareMarquee";
 import InteractiveRcmTabs from "@/components/InteractiveRcmTabs";
@@ -22,6 +23,9 @@ export default function HomePage() {
 
       {/* 2.5 Revenue Cycle Diagram (White) - Macro view of the process */}
       <RevenueCycleDiagram />
+
+      {/* NEW: Comprehensive Services Section (Pastel Card Grid) */}
+      <ComprehensiveServices />
 
       {/* 3. Core Capabilities / Billing Architecture (Dark) - Deep dive into exact clinical workflows */}
       <BillingArchitecture />

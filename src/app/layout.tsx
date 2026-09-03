@@ -99,12 +99,19 @@ export default function RootLayout({
               
               {/* Footer Logo (Matched to Navbar Brand Logo) */}
               <Link href="/" className="flex items-center gap-2.5 group w-fit pb-2" aria-label="MediLink">
-                <h2 
-                  className="text-[1.8rem] font-[800] tracking-[-0.03em] leading-none transition-transform duration-300 antialiased group-hover:scale-105"
-                  style={{ fontFamily: '"Plus Jakarta Sans", "Inter", sans-serif' }}
-                >
-                  <span className="text-white">Medi</span><span className="text-[#00d38a]">Link</span>
-                </h2>
+                  <h2 
+                    className="text-2xl font-[900] tracking-tight leading-none flex items-center text-white antialiased" 
+                    style={{ 
+                      fontFamily: '"Inter", sans-serif',
+                      WebkitFontSmoothing: 'antialiased', 
+                      MozOsxFontSmoothing: 'grayscale', 
+                      textRendering: 'optimizeLegibility', 
+                      textShadow: 'none',
+                      background: 'transparent'
+                    }}
+                  >
+                    Medi<span className="text-[#00D084]" style={{ filter: 'none', textShadow: 'none', background: 'transparent' }}>Link</span>
+                  </h2>
               </Link>
 
               <p className="text-slate-400 text-sm leading-relaxed max-w-sm">

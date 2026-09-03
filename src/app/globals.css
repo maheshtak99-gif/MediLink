@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&family=Sora:wght@400;600;700;800&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -314,9 +314,30 @@ p {
 }
 
 .animate-page-reveal {
-  animation: pageRevealCinematic 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation: pageRevealCinematic 1.8s cubic-bezier(0.16, 1, 0.3, 1) both;
   animation-delay: 3.5s;
 }
+
+/* 
+ * Cool Staggered Hero Entrance Theme
+ * These trigger right as the splash screen explosion ends and the page sweeps in 
+ */
+@keyframes heroElementReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-hero-stagger-1 { animation: heroElementReveal 1.5s cubic-bezier(0.16, 1, 0.3, 1) both; animation-delay: 4.2s; }
+.animate-hero-stagger-2 { animation: heroElementReveal 1.5s cubic-bezier(0.16, 1, 0.3, 1) both; animation-delay: 4.4s; }
+.animate-hero-stagger-3 { animation: heroElementReveal 1.5s cubic-bezier(0.16, 1, 0.3, 1) both; animation-delay: 4.6s; }
+.animate-hero-stagger-4 { animation: heroElementReveal 1.5s cubic-bezier(0.16, 1, 0.3, 1) both; animation-delay: 4.8s; }
+.animate-hero-stagger-5 { animation: heroElementReveal 1.5s cubic-bezier(0.16, 1, 0.3, 1) both; animation-delay: 5.0s; }
 
 /* Print optimization for Save as PDF */
 @media print {

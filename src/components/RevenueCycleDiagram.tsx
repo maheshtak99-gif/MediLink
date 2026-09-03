@@ -101,17 +101,21 @@ export default function RevenueCycleDiagram() {
   ];
 
   return (
-    <div className="w-full bg-white py-16 px-4 sm:px-6 lg:px-8 font-sans overflow-x-auto">
-      <div className="max-w-[1400px] mx-auto min-w-[1000px]">
-        {/* Title */}
-        <div className="text-center mb-12 animate-fade-in-up">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest bg-sky-50 text-sky-700 border border-sky-100 shadow-sm mb-4">
-            Financial Architecture
-          </span>
-          <h2 className="font-heading font-extrabold text-4xl lg:text-5xl text-slate-900 tracking-tight drop-shadow-sm">
-            Revenue Cycle Management
-          </h2>
-        </div>
+    <div className="w-full bg-white py-16 font-sans">
+      
+      {/* Title (Mobile Responsive) */}
+      <div className="text-center mb-12 animate-fade-in-up px-4 sm:px-6 lg:px-8">
+        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest bg-sky-50 text-sky-700 border border-sky-100 shadow-sm mb-4">
+          Financial Architecture
+        </span>
+        <h2 className="font-heading font-extrabold text-4xl lg:text-5xl text-slate-900 tracking-tight drop-shadow-sm">
+          Revenue Cycle Management
+        </h2>
+      </div>
+
+      {/* Horizontally Scrollable Diagram */}
+      <div className="w-full overflow-x-auto px-4 sm:px-6 lg:px-8 pb-8">
+        <div className="max-w-[1400px] mx-auto min-w-[1000px]">
 
         {/* Top Brackets & Groupings */}
         <div className="grid grid-cols-7 gap-4 mb-4 text-center">
@@ -192,6 +196,7 @@ export default function RevenueCycleDiagram() {
               {found}
             </div>
           ))}
+        </div>
         </div>
       </div>
     </div>

@@ -91,10 +91,16 @@ export default function SplashScreen() {
         <div className={`flex flex-col items-center transition-all duration-[1500ms] ease-[cubic-bezier(0.7,0,0.3,1)] ${reveal ? "scale-125 blur-xl opacity-0 translate-y-8" : "scale-100 blur-0 opacity-100 translate-y-0"}`}>
           {/* Brand Text */}
         <div 
-          className="text-4xl sm:text-5xl font-[800] tracking-tight leading-none text-center animate-[slideUpFade_1s_cubic-bezier(0.16,1,0.3,1)_both]"
-          style={{ fontFamily: '"Poppins", sans-serif', animationDelay: '1.2s' }}
+          className="text-4xl sm:text-5xl font-[900] tracking-tight leading-none text-center animate-[slideUpFade_1s_cubic-bezier(0.16,1,0.3,1)_both] antialiased"
+          style={{ 
+            fontFamily: '"Inter", sans-serif', 
+            animationDelay: '1.2s',
+            WebkitFontSmoothing: 'antialiased', 
+            MozOsxFontSmoothing: 'grayscale', 
+            textRendering: 'optimizeLegibility',
+          }}
         >
-          <span className="text-slate-900">Medi</span><span className="text-[#00d38a]">Link</span>
+          <span className="text-black">Medi</span><span className="text-[#00D38A]">Link</span>
         </div>
         
         {/* Subtitle */}

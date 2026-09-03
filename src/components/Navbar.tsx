@@ -13,9 +13,9 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center" aria-label="MediLink">
           <h1 
-            className="text-[1.8rem] font-[800] tracking-[-0.03em] leading-none flex items-center text-black antialiased" 
+            className="text-[1.8rem] font-[900] tracking-tight leading-none flex items-center text-black antialiased" 
             style={{ 
-              fontFamily: '"Plus Jakarta Sans", "Inter", sans-serif',
+              fontFamily: '"Inter", sans-serif',
               WebkitFontSmoothing: 'antialiased', 
               MozOsxFontSmoothing: 'grayscale', 
               textRendering: 'optimizeLegibility', 

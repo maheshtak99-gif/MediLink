@@ -88,7 +88,7 @@ export default function HeroCarousel() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10 w-full">
         
         {/* Dynamic Left Column (Text & Quotes) */}
-        <div className="lg:col-span-7 space-y-8 text-left h-full flex flex-col justify-center">
+        <div className="lg:col-span-12 max-w-5xl space-y-8 text-left h-full flex flex-col justify-center">
           
           <div className="grid grid-cols-1 grid-rows-1 w-full">
             {slides.map((slide, index) => (
@@ -101,12 +101,12 @@ export default function HeroCarousel() {
                 }`}
               >
                 <div className="flex flex-col gap-6">
-                  <div>
+                  <div className="animate-hero-stagger-1">
                     <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold bg-[#00d38a] text-slate-950 uppercase tracking-widest shadow-[0_4px_15px_rgba(0,211,138,0.5)]">
                       <ShieldCheck className="h-4 w-4" /> {slide.badge}
                     </span>
                   </div>
-                  <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.1] text-white">
+                  <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.1] text-white animate-hero-stagger-2">
                     {slide.headlineLine1} <br />
                     <span className="bg-gradient-to-r from-sky-400 via-amber-400 to-amber-500 bg-clip-text text-transparent">
                       {slide.headlineGradient}
@@ -114,7 +114,7 @@ export default function HeroCarousel() {
                   </h1>
                   
                   {/* Flex container to ensure text and bullets stack cleanly in document flow */}
-                  <div className="flex flex-col gap-5 relative bg-slate-950/20 p-4 -ml-4 rounded-2xl backdrop-blur-[2px]">
+                  <div className="flex flex-col gap-5 relative bg-slate-950/20 p-4 -ml-4 rounded-2xl backdrop-blur-[2px] animate-hero-stagger-3">
                     <p className="text-white text-base sm:text-lg lg:text-xl max-w-xl leading-relaxed font-bold drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
                       {slide.description}
                     </p>
@@ -135,7 +135,7 @@ export default function HeroCarousel() {
                     </ul>
                   </div>
 
-                  <div className="pt-2">
+                  <div className="pt-2 animate-hero-stagger-4">
                     <Link
                       href="/contact"
                       className="inline-flex px-8 py-4 bg-brand-teal hover:bg-brand-teal-dark text-slate-950 font-bold rounded-xl transition-all shadow-lg shadow-brand-teal/20 items-center justify-center gap-2 group text-sm"
@@ -164,48 +164,7 @@ export default function HeroCarousel() {
           </div>
         </div>
 
-        {/* Static Right Column (Trust Indicators) */}
-        <div className="lg:col-span-5 flex justify-center relative z-20 mt-12 lg:mt-0">
-          <div className="bg-slate-950/40 backdrop-blur-xl border border-white/10 rounded-3xl p-6 sm:p-8 w-full max-w-md space-y-6 shadow-2xl shadow-black/50">
-            <div className="flex justify-between items-center border-b border-slate-800 pb-4">
-              <h3 className="font-heading font-bold text-lg text-white">Trust Indicators</h3>
-              <span className="text-[10px] font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full uppercase">
-                Active
-              </span>
-            </div>
-            <div className="space-y-4">
-              <div className="bg-slate-900/60 border border-slate-800 rounded-2xl p-4 flex items-center gap-4">
-                <div className="w-10 h-10 bg-slate-800/80 rounded-xl flex items-center justify-center shrink-0 border border-slate-700">
-                  <FileCheck className="h-5 w-5 text-slate-400" />
-                </div>
-                <div>
-                  <div className="text-[10px] text-slate-500 uppercase tracking-wider font-bold">Billing Accuracy</div>
-                  <div className="text-sm font-semibold text-slate-200">95%+ Target Claims Approval</div>
-                </div>
-              </div>
 
-              <div className="bg-slate-900/60 border border-slate-800 rounded-2xl p-4 flex items-center gap-4">
-                <div className="w-10 h-10 bg-emerald-500/10 rounded-xl flex items-center justify-center shrink-0 border border-emerald-500/20">
-                  <ShieldCheck className="h-5 w-5 text-emerald-400" />
-                </div>
-                <div>
-                  <div className="text-[10px] text-slate-500 uppercase tracking-wider font-bold">Data Compliance</div>
-                  <div className="text-sm font-semibold text-slate-200">HIPAA Compliant Gateway</div>
-                </div>
-              </div>
-
-              <div className="bg-slate-900/60 border border-slate-800 rounded-2xl p-4 flex items-center gap-4">
-                <div className="w-10 h-10 bg-slate-800/80 rounded-xl flex items-center justify-center shrink-0 border border-slate-700">
-                  <Award className="h-5 w-5 text-slate-400" />
-                </div>
-                <div>
-                  <div className="text-[10px] text-slate-500 uppercase tracking-wider font-bold">NCQA/URAC Audit</div>
-                  <div className="text-sm font-semibold text-slate-200">Standard Verified Credentials</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
       </div>
     </section>
