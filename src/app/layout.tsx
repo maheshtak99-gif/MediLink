@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Link from "next/link";
+import Tracker from "@/components/Tracker";
+import AdminLink from "@/components/AdminLink";
 import { ShieldCheck, Phone, Mail, Clock, Activity, ChevronRight } from "lucide-react";
 import Script from "next/script";
 import SplashScreen from "@/components/SplashScreen";
@@ -300,7 +302,8 @@ export default function RootLayout({
                 </a>
                 <a href="#" className="hover:text-slate-300 hover:underline transition-colors">
                   Business Associate Agreement (BAA)
-                </a>
+                  </a>
+                  <AdminLink />
               </div>
             </div>
           </div>
