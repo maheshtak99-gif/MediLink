@@ -51,8 +51,6 @@ export default function AnalyticsPage() {
         </a>
       </div>
 
-      </div>
-
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
         <div className="bg-black/40 backdrop-blur-md rounded-2xl border border-amber-500/20 p-6 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
           <div className="flex items-center gap-4">
