@@ -70,6 +70,21 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full scroll-smooth" suppressHydrationWarning>
       <body className="min-h-full flex flex-col bg-slate-950 text-slate-300 font-sans antialiased text-[17px]" suppressHydrationWarning>
+
+        {/* Google Analytics */}
+        <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-EZY17BSFZ8" />
+        <Script id="google-analytics" strategy="afterInteractive" dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-EZY17BSFZ8', {
+              page_path: window.location.pathname,
+            });
+          `
+        }} />
+        
+        <Tracker />
         <SplashScreen />
         <Script id="clear-hs-chat" strategy="beforeInteractive">
           {`
