@@ -72,7 +72,7 @@ export default function AnalyticsPage() {
             <div>
               <p className="text-sm font-light tracking-wide text-amber-100/50 uppercase">Top Browser</p>
               <h3 className="text-3xl font-serif text-amber-100 mt-1">
-                {Object.entries(browserCounts).sort((a,b) => b[1] - a[1])[0]?.[0] || 'N/A'}
+                {Object.entries(browserCounts).sort((a: [string, any], b: [string, any]) => (b[1] as number) - (a[1] as number))[0]?.[0] || 'N/A'}
               </h3>
             </div>
           </div>
@@ -86,7 +86,7 @@ export default function AnalyticsPage() {
             <div>
               <p className="text-sm font-light tracking-wide text-amber-100/50 uppercase">Top Platform</p>
               <h3 className="text-3xl font-serif text-amber-100 mt-1">
-                {Object.entries(osCounts).sort((a,b) => b[1] - a[1])[0]?.[0] || 'N/A'}
+                {Object.entries(osCounts).sort((a: [string, any], b: [string, any]) => (b[1] as number) - (a[1] as number))[0]?.[0] || 'N/A'}
               </h3>
             </div>
           </div>
