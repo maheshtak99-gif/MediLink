@@ -1,0 +1,22 @@
+
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      15% { transform: scale(1.08); }
+      30% { transform: scale(1); }
+      45% { transform: scale(1.08); }
+      60% { transform: scale(1); }
+    }
+    .animate-heartbeat {
+      transform-origin: 50px 50px;
+      animation: heartbeat 3s infinite cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  </style>
+  <g class="animate-heartbeat">
+    <circle cx="50" cy="50" r="46" fill="#0f172a" stroke="#ffffff" stroke-width="2" />
+    <path d="M 33 23 H 67 V 33 H 77 V 67 H 67 V 77 H 33 V 67 H 23 V 33 H 33 Z" fill="#ffffff" />
+    <path d="M 35 25 H 50 V 75 H 35 V 65 H 25 V 35 H 35 Z" fill="#00D38A" />
+    <path d="M 50 25 H 65 V 35 H 75 V 65 H 65 V 75 H 50 Z" fill="#1e3a8a" />
+  </g>
+</svg>
