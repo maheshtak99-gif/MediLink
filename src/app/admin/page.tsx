@@ -38,11 +38,19 @@ export default function AnalyticsPage() {
         <p className="text-amber-100/60 mt-1 font-light tracking-wide">Real-time anonymous traffic logs and active footprints.</p>
       </div>
 
-      <div className="bg-amber-950/40 border border-amber-500/30 p-4 rounded-xl flex gap-3 text-amber-200/90 backdrop-blur-md">
-        <ShieldAlert className="w-5 h-5 flex-shrink-0 mt-0.5 text-amber-500" />
-        <div className="text-sm leading-relaxed font-light">
-          <strong className="text-amber-400 font-medium tracking-wide">Privacy Note:</strong> This tracking captures anonymous technical data (IP addresses, Browser, Operating System). To attach these footprints to real identities (Names, Emails), you must encourage users to fill out Lead Forms on the main website.
+      
+      <div className="bg-amber-950/40 border border-amber-500/30 p-4 rounded-xl flex gap-3 text-amber-200/90 backdrop-blur-md items-center justify-between">
+        <div className="flex gap-3 items-start">
+          <ShieldAlert className="w-5 h-5 flex-shrink-0 mt-0.5 text-amber-500" />
+          <div className="text-sm leading-relaxed font-light">
+            <strong className="text-amber-400 font-medium tracking-wide">Tracking Powered by Google Analytics:</strong> Live visitor tracking for production is now handled by Google Analytics. Click the button to view your real-time live data dashboard.
+          </div>
         </div>
+        <a href="https://analytics.google.com/" target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-amber-500 hover:bg-amber-400 text-black font-medium text-sm rounded-lg whitespace-nowrap transition-colors">
+          Open Google Analytics
+        </a>
+      </div>
+
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
